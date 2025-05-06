@@ -14,7 +14,7 @@ const Dropzone = ({ onFilesSelected, isSubmitting }: DropzoneProps) => {
   const [error, setError] = useState("");
 
   const onDropRejected = useCallback(() => {
-    setError("Algunos archivos fueron rechazados. Solo se permiten imagenes (jpeg, jpg, png, webp) de hasta 5MB."
+    setError("Algunos archivos fueron rechazados. Solo se permiten maximo 3 imagenes (jpeg, jpg, png, webp) de hasta 5MB."
      
     );
   }, []);
@@ -39,7 +39,7 @@ const Dropzone = ({ onFilesSelected, isSubmitting }: DropzoneProps) => {
     },
     maxSize: 5 * 1024 * 1024, // 5MB
     multiple: true,
-    maxFiles: 5,
+    maxFiles: 3,
     disabled: isSubmitting,
   });
 

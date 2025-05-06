@@ -1,6 +1,5 @@
 
 import React from 'react'
-import { API_HOST } from '@/app/config-global';
 import Image from 'next/image'
 import Link from 'next/link'
 import { Product } from '@/context/product/types';
@@ -15,7 +14,7 @@ function Card(product: Product) {
       <div className="w-full h-40 relative mb-3">
         {product.images?.[0]?.url && (
           <Image
-            src={`${API_HOST}${product.images[0].url}`}
+            src={product.images[0].url}
             alt={product.images[0].alt || product.title}
             fill
             className="object-contain"

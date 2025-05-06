@@ -1,4 +1,3 @@
-import { API_HOST } from "@/app/config-global";
 import NavigationCarouselButton from "@/ui/NavigationCarouselButton";
 import NavigationDots from "@/ui/NavigationDots";
 import Image from "next/image";
@@ -29,7 +28,7 @@ function Carousel({ images }: Props) {
         {images?.length > 0 ? (
           <>
             <Image
-              src={`${API_HOST}${images[currentImageIndex].url}`}
+              src={images[currentImageIndex].url}
               alt={images[currentImageIndex].alt}
               fill
               className="h-full w-full object-contain"
